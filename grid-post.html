@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Post</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            max-width: 80vw;
+            padding: 2rem 1rem;
+            margin: 0 auto;
+        }
+        .header_container{
+            margin-bottom: 2.8rem;
+        }
+        .header_title{
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .header_desc{
+            max-width: 518px;
+            text-align: center;
+            color: rgb(54, 54, 54);
+            margin: 0 auto;
+        }
+        .main_container{
+            display: grid;
+            gap: 1.5rem;
+            /* grid-template-columns: repeat(1, 1fr); */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+            justify-content: center;
+        }
+        /* @media (min-width:650px){
+            .main_container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width:1080px){
+            .main_container{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width:1340px){
+            .main_container{
+                grid-template-columns: repeat(4, 1fr);
+            }
+        } */
+        .card_container{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(214, 211, 211);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .card_image_container{
+            position: relative;
+            overflow: hidden;
+            height: 12rem;
+        }
+        .card_image{
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .card_title_container{
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+        .card_container:hover .card_image{
+            transform: scale(1.1);
+            transition-duration: 200ms;
+        }
+        .card_title{
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5rem;
+            margin-bottom: 0.3rem;
+            color: rgb(45, 42, 42);
+        }
+        .card_title_anchor:hover .card_title{
+            color: rgb(99, 99, 238);
+        }
+        .card_desc{
+            color: rgb(118, 116, 116);
+            font-size: 1rem;
+        }
+        .card_footer_container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        .author_container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+        .author_avatar_container{
+            height: 2.5rem;
+            width: 2.5rem;
+            overflow: hidden;
+            border: 1px solid rgb(129, 121, 121);
+            border-radius: 50%;
+            background-color: rgb(239, 227, 227);
+        }
+        .author_info_container{
+            display: flex;
+            flex-direction: column;
+        }
+        .author_name{
+            color: rgb(145, 145, 255);
+        }
+        .author_date{
+            color: rgb(139, 133, 133);
+        }
+        .card_tag_container span{
+            font-size: 0.7rem;
+            border: 1px solid rgb(87, 82, 82);
+            border-radius: 2px;
+            padding: 0.25rem 0.5rem;
+            line-height: 1.3rem;
+            color: rgb(93, 88, 88);
+        }
+    </style>
+</head>
+<body class="body_container">
+    <div class="container">
+        <header class="header_container">
+            <h1 class="header_title">Grid Post Blog</h1>
+            <p class="header_desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas eius harum cumque consequuntur.
+            </p>
+        </header>
+
+        <main class="main_container">
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?healthy" alt="healthy" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?health" alt="health" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?technology" alt="technology" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?art" alt="art" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?science" alt="science" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?travel" alt="travel" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?food" alt="food" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            <!-- Card One Start -->
+            <div class="card_container">
+                <a href="#" class="card_image_container">
+                    <img src="https://source.unsplash.com/random/600×400/?nature" alt="nature" class="card_image" loading="lazy">
+                </a>
+
+                <div class="card_title_container">
+                    <a href="#" class="card_title_anchor">
+                        <h2 class="card_title">New Gadgets Released</h2>
+                    </a>
+                    <p class="card_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+
+                <div class="card_footer_container">
+                    <div class="author_container">
+                        <div class="author_avatar_container">
+                            <img src="https://api.dicebear.com/7.x/lorelei/svg" loading="lazy" alt="avatar">
+                        </div>
+                        <div class="author_info_container">
+                            <span class="author_name">John Deo</span>
+                            <span class="author_date">Sept 19, 2021 </span>
+                        </div>
+                    </div>
+
+                    <div class="card_tag_container">
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card One End -->
+            
+        </main>
+    </div>
+</body>
+</html>
